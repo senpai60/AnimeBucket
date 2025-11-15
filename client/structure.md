@@ -1,9 +1,28 @@
 src/
  ├── assets/
  ├── components/
- │    ├── ui/              # Reusable UI components (Buttons, Cards, Modals)
- │    ├── anime/           # Anime-specific components
- │    └── layout/          # Navbar, Sidebar, Wrapper layouts
+ │    ├── ui/
+ │    |     ├── Button.jsx
+ │    |     ├── Modal.jsx
+ │    |     ├── Card.jsx
+ │    |     ├── Loader.jsx
+ │    |     ├── Dropdown.jsx
+ │    |     └── Pagination.jsx
+ │    | 
+ |    ├── layout/
+ │    |      ├── Navbar.jsx
+ │    |      ├── Sidebar.jsx
+ │    |      ├── MainLayout.jsx
+ │    |      └── Footer.jsx
+ │    |  
+ |    ├── anime/
+ |           ├── AnimeCard.jsx
+ |           ├── AnimeGrid.jsx
+ |           ├── AnimeBanner.jsx
+ |           ├── AnimeInfo.jsx
+ |           ├── GenreBadge.jsx
+ |           ├── AddToBucketButton.jsx
+ |           └── AddToPlaylistButton.jsx        # Navbar, Sidebar, Wrapper layouts
  │
  ├── pages/
  │    ├── Home/
