@@ -1,6 +1,7 @@
 import AnimeCard from "../../components/anime/AnimeCard";
+import TopTen from "./TopTen";
 
-const animeList = [
+const topTenAnime = [
   {
     title: "Jujutsu Kaisen",
     image: "https://cdn.myanimelist.net/images/anime/1490/111780l.jpg",
@@ -95,10 +96,9 @@ const animeList = [
 
 function Home() {
   return (
-    <section className="p-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      {animeList.map((anime, idx) => (
-        <AnimeCard key={idx} {...anime} />
-      ))}
+    <section className="md:p-10 w-full h-full">
+      <h1 className="text-4xl mb-5">Top Ten</h1>
+      <TopTen topTenAnime={topTenAnime}/>
     </section>
   );
 }

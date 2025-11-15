@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { LayoutDashboard, Search, Film, Heart, Menu } from "lucide-react";
+import { LayoutDashboard, Search, Film, Heart, Menu, ShoppingBasket } from "lucide-react";
 import { useState } from "react";
 
 export default function Sidebar() {
@@ -25,27 +25,37 @@ export default function Sidebar() {
       {/* Sidebar */}
       <aside
         className={`
-          fixed md:static z-40 left-0 top-0 h-full
-          w-64 bg-neutral-900 border-r border-neutral-700
-          transform transition-transform duration-300
-          ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
-        `}
+    fixed md:static z-40 left-0 top-0 h-full
+    w-64 bg-[#d8d2c6]
+    border-r-[4px] border-[#4d4c4a]
+    shadow-[8px_0_0_#4d4c4a]
+    transform transition-transform duration-300
+    ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+  `}
       >
-        <div className="p-6 font-bold text-xl text-white">ViVeePanel</div>
+        <div className="p-6 font-bold text-2xl text-[#4d4c4a]">AnimeBucket <ShoppingBasket className="inline" size={20} /></div>
 
-        <nav className="space-y-2 px-4">
+        <nav className="space-y-3 px-4">
           {navItems.map(({ name, path, icon: Icon }) => (
             <NavLink
               key={name}
               to={path}
               className={({ isActive }) =>
-                `flex items-center space-x-3 px-4 py-3 rounded-lg 
-                 transition 
-                 ${isActive ? "bg-blue-600 text-white" : "text-neutral-300 hover:bg-neutral-800"}`
+                `
+           flex items-center gap-3 px-4 py-3 rounded-xl
+           border-[3px] border-[#4d4c4a]
+           shadow-[4px_4px_0_#4d4c4a]
+           transition-all
+           ${
+             isActive
+               ? "bg-[#61c470] text-[#4d4c4a]"
+               : "bg-[#f5f1e8] text-[#4d4c4a] hover:bg-[#e8e2d6]"
+           }
+         `
               }
             >
               <Icon size={20} />
-              <span>{name}</span>
+              {name}
             </NavLink>
           ))}
         </nav>
@@ -54,7 +64,13 @@ export default function Sidebar() {
       {/* Mobile Toggle Button */}
       <button
         onClick={() => setOpen(true)}
-        className="md:hidden fixed top-4 left-4 z-50 text-white"
+        className="
+    md:hidden fixed top-4 left-4 z-50 
+    bg-[#e65e5e] p-2 rounded-xl
+    border-[3px] border-[#4d4c4a]
+    shadow-[3px_3px_0_#4d4c4a]
+    text-[#4d4c4a] font-bold
+  "
       >
         <Menu size={26} />
       </button>
